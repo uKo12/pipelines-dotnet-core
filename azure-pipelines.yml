@@ -8,14 +8,10 @@ trigger:
 
 pool:
   vmImage: 'Ubuntu-16.04'
-  
-steps:
-- task: DotNetCoreInstaller@0
-  inputs:
-    version: '2.1.300'
-    
+ 
     
     steps:
+    
 - task: DotNetCoreCLI@2
   displayName: 'Install dotnetsay'
   inputs:
@@ -23,18 +19,13 @@ steps:
     projects: '**/*.csproj'
     custom: tool
     arguments: 'install -g dotnetsay'
-
-variables:
-  buildConfiguration: 'Release'
-
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-  
-  steps:
-
-- task: DotNetCoreCLI@2
+    
+    - task: DotNetCoreCLI@2
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+
+variables:
+  buildConfiguration: 'Release'
+
