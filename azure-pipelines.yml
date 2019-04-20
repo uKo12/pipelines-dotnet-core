@@ -17,8 +17,6 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration Release' # Update this to match your need
     
-- task: PublishBuildArtifacts@1
-  
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
