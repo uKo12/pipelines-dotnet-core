@@ -10,14 +10,9 @@ pool:
   vmImage: 'Ubuntu-16.04'
  
 steps:
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    command: build
-    projects: '**/*.csproj'
-    arguments: '--configuration Release' # Update this to match your need
-    
-- task: DotNetCoreCLI@2
+
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
   inputs:
     command: publish
     publishWebProjects: True
