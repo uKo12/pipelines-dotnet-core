@@ -11,13 +11,9 @@ pool:
  
     
 steps:
-- task: DotNetCoreCLI@2
-  displayName: 'Install dotnetsay'
+- task: DotNetCoreInstaller@0
   inputs:
-    command: custom
-    projects: '**/*.csproj'
-    custom: tool
-    arguments: 'install -g dotnetsay'
+    version: '2.1.300'
 
 variables:
   buildConfiguration: 'Release'
