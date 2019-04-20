@@ -9,11 +9,13 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
  
-    
 steps:
-- task: DotNetCoreInstaller@0
+- task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
-    version: '2.1.300'
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration Release' # Update this to match your need
 
 variables:
   buildConfiguration: 'Release'
