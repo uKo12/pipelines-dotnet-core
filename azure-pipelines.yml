@@ -10,17 +10,16 @@ pool:
   vmImage: 'Ubuntu-16.04'
  
     
-    steps:
+steps:
+- task: DotNetCoreCLI@2
+displayName: 'Install dotnetsay'
+inputs:
+command: custom
+projects: '**/*.csproj'
+custom: tool
+arguments: 'install -g dotnetsay'
     
 - task: DotNetCoreCLI@2
-  displayName: 'Install dotnetsay'
-  inputs:
-    command: custom
-    projects: '**/*.csproj'
-    custom: tool
-    arguments: 'install -g dotnetsay'
-    
-    - task: DotNetCoreCLI@2
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
