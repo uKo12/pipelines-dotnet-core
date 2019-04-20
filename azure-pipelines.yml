@@ -17,11 +17,12 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration Release'
 
-- task: ArchiveFiles@2
-  displayName: 'Archive files'
+- task: DotNetCoreCLI@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: false
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts: drop'
