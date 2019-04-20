@@ -14,13 +14,6 @@ steps:
   inputs:
     version: '2.1.300'
     
- steps:
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    command: build
-    projects: '**/*.csproj'
-    arguments: '--configuration Release' 
     
     steps:
 - task: DotNetCoreCLI@2
