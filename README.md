@@ -1,5 +1,7 @@
 # Sample .NET Core app for Endava Azure DevOps Challenge
 
+[![Build Status](https://dev.azure.com/ivazure/uKo-Core/_apis/build/status/uKo12.pipelines-dotnet-core?branchName=master)](https://dev.azure.com/ivazure/uKo-Core/_build/latest?definitionId=2&branchName=master)
+
 Simple .NET Core app deployed with Azure DevOps. 
 
 - Project name: uKo-Core
